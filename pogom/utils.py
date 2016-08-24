@@ -145,8 +145,8 @@ def get_args():
                         type=int, default=5)
     parser.add_argument('--db-threads', help='Number of db threads; increase if the db queue falls behind',
                         type=int, default=1)
-    parser.add_argument('-wh', '--webhook', help='Define URL(s) to POST webhook information to',
-                        nargs='*', default=False, dest='webhooks')
+    parser.add_argument('-wh', '--webhook', action='append', help='Define URL(s) to POST webhook information to',
+                        dest='webhooks')
     parser.add_argument('--webhook-updates-only', help='Only send updates (pokémon & lured pokéstops)',
                         action='store_true', default=False)
     parser.add_argument('--wh-threads', help='Number of webhook threads; increase if the webhook queue falls behind',
